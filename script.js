@@ -1,13 +1,8 @@
 function submitButton() {
     const email = document.getElementById("usernameOrEmail").value;
     const pass = document.getElementById("password").value;
-    if (
-        (email == "" || email == null) &&
-        (pass == "" || pass == null)
-    ) {
-        alert("Please enter email and password");
-        return false;
-    } else if (email == "" || email == null) {
+
+    if (email == "" || email == null) {
         alert("Please enter your emailid. ");
         return false;
     } else if (pass == "" || pass == null) {
