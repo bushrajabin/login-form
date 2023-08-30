@@ -1,3 +1,8 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
 .main {
     background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pf-s80-pastel-ploy-01a_1.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=97b469027f1667a4279b223e931c0047);
     background-repeat: no-repeat;
@@ -82,4 +87,58 @@
     border-radius: 10px;
     color: black;
     cursor: pointer;
+}
+
+
+/* CSS FOR TOAST-BOX THIS CLASS NAME CREATED IN JS */
+.toast {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+#toastBox {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 10px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.toast>img {
+    width: 20px;
+}
+
+.Success {
+    background-color: transparent;
+    text-align: start;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border: 2px solid green;
+    border-radius: 10px;
+   transform: rotate(360 deg);
+}
+
+.Success>img {
+    width: 40px;
+}
+
+.Error {
+    background-color: red;
+    padding: 4px;
+    text-align: start;
+    background-color: transparent;
+    border: 2px solid red;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.Invalid {
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 10px;
+    
 }
