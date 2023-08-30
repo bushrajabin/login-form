@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="main">
-          <div class="form">
-        <input type="text" placeholder="Username or E-mail" id="usernameOrEmail">
-        <input type="password" placeholder="password" id="password">
-        <button id="btn1" onclick="submitButton()">SUBMIT</button>
+        <div id="toastBox"></div>
+
+        <div class="form">
+            <h2>Login-for Add your item</h2>
+            <div class="commonDiv">
+                <input type="email" placeholder="Email or User Name" id="email" />
+                <img src="./images/email2Icon.png" alt="" />
+            </div>
+
+            <div class="commonDiv">
+                <input type="password" id="password" placeholder="Password" />
+                <img src="./images/passwordHide.png" id="passwordIcon" alt="" onclick="changePasswordVisibility()" />
+            </div>
+            <button id="login" onclick="loginForm()">Login</button>
+        </div>
     </div>
-    </div>
-  
+
     <script src="./script.js"></script>
 </body>
+
 </html>
