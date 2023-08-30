@@ -1,43 +1,85 @@
-.main{
-    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
-    padding: 30px;
-    height: 60vh;
-    width: 40vw;
-   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-   border-radius: 10px;
-   margin-left: 30%;
-}
-
-.form{
+.main {
+    background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pf-s80-pastel-ploy-01a_1.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=97b469027f1667a4279b223e931c0047);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     text-align: center;
-    align-items: center;
-    margin: auto;
+    height: 100vh;
     gap: 10px;
-    width: 20vw;
-    margin-top: 90px;
 }
 
-input{
-    background-color:transparent;
-    border: none;
-    padding: 5px;
-   border: 2px solid white;
-   outline: none;
+.top_text {
+    width: 30%;
+    height: 10%;
+    color: rgb(2, 2, 2);
     font-size: 20px;
-    letter-spacing: 2px;
-    border-radius: 5px;
-    
 }
 
-#btn1{
+.form {
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/240/386/472/pastel-purple-blur-gradation-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     padding: 10px;
-    border: none;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 10px;
 }
-#btn1:hover{
-    background-color: black;
-    color: white;
+
+.form>h2 {
+    font-weight: 100;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.commonDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    height: 5vh;
+    position: relative;
+}
+
+.commonDiv>img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20%;
+    cursor: pointer;
+}
+
+#email,
+#password {
+    padding: 10px;
+    width: 60%;
+    height: 80%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+
+#login {
+    background-color: transparent;
+    padding: 10px;
+    width: 20vw;
+    border: 2px solid lightblue;
+    outline: none;
+    font-size: 17px;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
 }
