@@ -1,3 +1,13 @@
+.component {
+    color: var(--bs-gray-800);
+    background-color: var(--bs-gray-100);
+    border: 1px solid var(--bs-gray-200);
+    border-radius: .25rem;
+  }
+  
+  .component-header {
+    color: var(--bs-purple);
+  }
 body {
     padding: 0px;
     margin: 0px;
@@ -119,7 +129,7 @@ body {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     border: 2px solid green;
     border-radius: 10px;
-   transform: rotate(360 deg);
+    transform: rotate(360 deg);
 }
 
 .Success>img {
@@ -140,5 +150,36 @@ body {
     background-color: yellow;
     padding: 10px;
     border-radius: 10px;
-    
+
+}
+
+/* CSS FOR SHOW FORM */
+.showDiv {
+    background-image: url(https://template.canva.com/EAD2962NKnQ/2/0/400w-LrNk7fAXxw8.jpg);
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 40vw;
+    height: 40vh;
+    border-radius: 20px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    display: none;
+}
+
+#remove{
+    width: 30px;
+    border: none;
+    font-size: 30px;
+    position: absolute;
+    right: 33%;
+    top: 57%;
+}
+
+#show {
+    background-color: aquamarine;
 }

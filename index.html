@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -16,15 +18,26 @@
             <h2>Login-for Add your item</h2>
             <div class="commonDiv">
                 <input type="email" placeholder="Email or User Name" id="email" />
-                <img src="./images/email2Icon.png" alt="" />
+                <i class="fa fa-user fa-3x" style="color: white;"></i>
+        
             </div>
 
             <div class="commonDiv">
                 <input type="password" id="password" placeholder="Password" />
-                <img src="./images/passwordHide.png" id="passwordIcon" alt="" onclick="changePasswordVisibility()" />
+                <i class="fa fa-lock fa-3x" id="passwordIcon" alt="" onclick="passwordIcon()"></i>
+                <!-- <i class="fa fa-unlock-alt fa-3x" aria-hidden="true"></i> -->
+
+
+
             </div>
             <button id="login" onclick="loginForm()">Login</button>
         </div>
+
+
+        <div class="showDiv" id="showhere">
+            <button onclick="removeItem">X</button>
+        </div>
+
     </div>
 
     <script src="./script.js"></script>

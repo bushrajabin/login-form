@@ -17,7 +17,7 @@ function loginForm() {
             const msg = "Please enter emailid. It can't be empty!! ";
             showToast(msg, "error");
         } else if (password == "") {
-            if (!checkEmail) {
+            if (!emailCheck) {
                 const msg = "email is not valid and also enter password";
                 showToast(msg, "invalid");
                 //
@@ -41,28 +41,56 @@ function loginForm() {
             const msg = "Password length must be atleast 8 characters";
             showToast(msg, "invalid");
         } else {
-            const msg = `${email + "\n" + password}`;
-            showToast(msg, "success");
+            let person = {
+                email: email,
+                password: password
+            };
+            localStorage.setItem('person', JSON.stringify(person))
         }
     }
 }
 
+// ----------------SHOW FORM------------------
+document.getElementById('login').addEventListener("click", () => {
+    let userData = JSON.parse(localStorage.getItem('person'))
+    const showForm = document.getElementById("showhere");
+    showForm.style.display = "flex";
+    const show = document.createElement('div');
+    show.innerHTML = `
+         <h2> Email:${userData.email}</h2>
+         <h2> Password:${userData.password}</h2>`;
+    showForm.appendChild(show);
+})
 
-// =======================IN THIS FUNCTION WE CHANGE THE VISIBLITY OF THE PASSWORD ICON==============
+
+
+// =============================THis FUNCTION for remove elemnt from local storage==========
+function removeItem() {
+    localStorage.removeItem('person');
+    document.getElementById("showhere").style.display = "none"
+}
+
+// ==========THIS FUNCTION FOR CHANGEVISIBILITYOFICON===========
 function passwordIcon() {
     const passwordType = document.getElementById("password");
     const passIcon = document.getElementById("passwordIcon");
 
+
     if (passwordType.type === "password") {
+
         passwordType.type = "text";
-        passIcon.src = "images/passwordShow.png";
+        console.log("hiii")
+        passIcon.classList = <i class="fa-solid fa-lock-open"></i>
+        text.innerHTML = "show"
+
 
     } else {
         passwordType.type = "password";
+        passIcon.classList = <i class="fa fa-lock"></i>
+        text.innerHTML = "hide"
         passIcon.src = "images/passwordHide.png"
     }
 }
-
 
 // ===============================================THIS FUNCTION IS FOR TOAST-BOX==================================================
 
@@ -95,7 +123,12 @@ function showToast(message, type) {
 
     setTimeout(() => {
         toast.remove();
-    }, 8000);
+    }, 1000);
 }
+
+
+
+
+
 
 
