@@ -3,8 +3,8 @@ const header = document.getElementById("mainHead");
 const div = document.createElement("div");
 div.className = "divForHead";
 div.innerHTML = `
-<h1>Logo</h1>
-<h1>hyy@gmail.com</h1>`;
+<img src="./images/logo.png" id="image"/>
+<i class="fa-solid fa-user fa-2x"></i>`;
 header.appendChild(div)
 
 
@@ -14,6 +14,8 @@ function loginForm() {
     //   IN THIS LINE WE GET ALL USER INPUT
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("Cp").value;
+
 
     // IN THIS LINE WE CHECK PASS LENGTH OR VALIDATE EMAIL USING .LENGTH & EMAILINCLUDES
     const passCheck = password.length;
@@ -51,15 +53,19 @@ function loginForm() {
         } else if (password < 8) {
             const msg = "Password length must be atleast 8 characters";
             showToast(msg, "invalid");
-        } else {
+        }
+        else if (confirmPassword != password) {
+            alert("password does not match");
+        }
+        else {
             let person = {
                 email: email,
                 password: password
             };
             localStorage.setItem('person', JSON.stringify(person))
 
-            const showForm = document.getElementById("showhere");
-            showForm.style.display = "flex";
+            // const showForm = document.getElementById("showhere");
+            // showForm.style.display = "flex";
 
             document.getElementById("mainHead").style.display = "flex";
             document.getElementById("form1").style.display = "none"
@@ -68,44 +74,45 @@ function loginForm() {
         }
     }
 
-
-
 }
 
 // ----------------SHOW FORM------------------
-document.getElementById('login').addEventListener("click", () => {
-    let userData = JSON.parse(localStorage.getItem('person'))
-    const showForm = document.getElementById("showhere");
-    const show = document.createElement('div');
-    show.innerHTML = `
-         <h2> Email:${userData.email}</h2>
-         <h2> Password:${userData.password}</h2>`;
-    showForm.appendChild(show);
+// document.getElementById('login').addEventListener("click", () => {
+//     let userData = JSON.parse(localStorage.getItem('person'))
+//     const showForm = document.getElementById("showhere");
+//     const show = document.createElement('div');
+//     show.innerHTML = `
+//          <h2> Email:${userData.email}</h2>
+//          <h2> Password:${userData.password}</h2>`;
+//     showForm.appendChild(show);
 
-})
+// })
 
 
 
 // =============================THis FUNCTION for remove elemnt from local storage==========
-function removeItem() {
-    localStorage.removeItem('person');
-    document.getElementById("showhere").style.display = "none";
+// function removeItem() {
+//     localStorage.removeItem('person');
+//     document.getElementById("showhere").style.display = "none";
 
-}
+// }
 
 // ==========THIS FUNCTION FOR CHANGEVISIBILITYOFICON===========
 
-function passwordIcon() {
+function showPassword() {
+
 
     var passField = document.getElementById("password");
-    var showPass = document.getElementById("passwordicon");
+    var showPass = document.getElementById("passwordDiv");
     if (passField.type === "password") {
         passField.type = "text";
-        passField.style.marginTop = "20px";
-        showPass.style.color = "white";
+
+        showPass.children[0].classList = "fa fa-lock-open fa-1x"
+
     } else {
         passField.type = "password";
-        showPass.style.color = "black";
+        showPass.children[0].classList = "fa fa-lock fa-1x"
+
     }
 }
 
@@ -126,7 +133,7 @@ function showToast(message, type) {
         case "error":
             toast.classList.add("Error");
             toast.innerHTML = `<img src="images/crossMark.png" > ${message}`;
-
+            // toast.classList =  `"fa-solid fa-circle-exclamation" ${message}`;
             break;
         case "invalid":
             toast.classList.add("Invalid");
@@ -141,12 +148,15 @@ function showToast(message, type) {
 
     setTimeout(() => {
         toast.remove();
-    }, 1000);
+    }, 9000);
 }
 
 
 
 
 
+
+
+// password validation
 
 
