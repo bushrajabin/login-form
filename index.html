@@ -11,27 +11,36 @@
 </head>
 
 <body>
-    <div class="main">
-        <div id="toastBox"></div>
+    <!-- =====================THIS LINE IS FOR NAV BAR======================== -->
+    <div class="mainhead" id="mainHead"></div>
 
-        <div class="form">
+    <!-- ==============THIS IS A DIV WHEN FORM DISPLAY NONE THAN SHOW THE DIV============= -->
+
+
+    <!-- ==============================THIS LINE IS FOR FORM=============== -->
+    <div class="main">
+        <div class="box" id="box1"></div>
+        <div id="toastBox"></div>
+        <div class="form" id="form1">
             <h2>Login-for Add your item</h2>
             <div class="commonDiv">
                 <input type="email" placeholder="Email or User Name" id="email" />
-                <i class="fa fa-user fa-2x" style="position: absolute; left: 75%;"></i>
-        
+                <i class="fa fa-user fa-2x" style="position: absolute; left: 75%; "></i>
+
             </div>
 
             <div class="commonDiv">
                 <input type="password" id="password" placeholder="Password" />
-                <i class="fa fa-lock fa-2x"   style="position: absolute; left: 75%;" id="passwordIcon" alt="" onclick="passwordIcon()"></i>
+                <i class="fa fa-lock fa-2x" style="position: absolute; left: 75%;" id="passwordicon"  onclick="passwordIcon()"></i>
+                <!-- <i class="fa fa-user fa-2x" style="position: absolute; left: 70%;" id="lockOpen;" ;></i> -->
             </div>
+
             <button id="login" onclick="loginForm()">Login</button>
         </div>
 
 
         <div class="showDiv" id="showhere">
-            <button onclick="removeItem">X</button>
+            <button onclick="removeItem()" id="remove">X</button>
         </div>
 
     </div>

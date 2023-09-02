@@ -1,3 +1,14 @@
+// =========================THIS IS FOR HEADER==========
+const header = document.getElementById("mainHead");
+const div = document.createElement("div");
+div.className = "divForHead";
+div.innerHTML = `
+<h1>Logo</h1>
+<h1>hyy@gmail.com</h1>`;
+header.appendChild(div)
+
+
+
 
 function loginForm() {
     //   IN THIS LINE WE GET ALL USER INPUT
@@ -46,20 +57,31 @@ function loginForm() {
                 password: password
             };
             localStorage.setItem('person', JSON.stringify(person))
+
+            const showForm = document.getElementById("showhere");
+            showForm.style.display = "flex";
+
+            document.getElementById("mainHead").style.display = "flex";
+            document.getElementById("form1").style.display = "none"
+            document.getElementById("box1").style.display = "flex";
+
         }
     }
+
+
+
 }
 
 // ----------------SHOW FORM------------------
 document.getElementById('login').addEventListener("click", () => {
     let userData = JSON.parse(localStorage.getItem('person'))
     const showForm = document.getElementById("showhere");
-    showForm.style.display = "flex";
     const show = document.createElement('div');
     show.innerHTML = `
          <h2> Email:${userData.email}</h2>
          <h2> Password:${userData.password}</h2>`;
     showForm.appendChild(show);
+
 })
 
 
@@ -67,30 +89,26 @@ document.getElementById('login').addEventListener("click", () => {
 // =============================THis FUNCTION for remove elemnt from local storage==========
 function removeItem() {
     localStorage.removeItem('person');
-    document.getElementById("showhere").style.display = "none"
+    document.getElementById("showhere").style.display = "none";
+
 }
 
 // ==========THIS FUNCTION FOR CHANGEVISIBILITYOFICON===========
+
 function passwordIcon() {
-    const passwordType = document.getElementById("password");
-    const passIcon = document.getElementById("passwordIcon");
 
-
-    if (passwordType.type === "password") {
-
-        passwordType.type = "text";
-        console.log("hiii")
-        passIcon.classList = <i class="fa-solid fa-lock-open"></i>
-        text.innerHTML = "show"
-
-
+    var passField = document.getElementById("password");
+    var showPass = document.getElementById("passwordicon");
+    if (passField.type === "password") {
+        passField.type = "text";
+        passField.style.marginTop = "20px";
+        showPass.style.color = "white";
     } else {
-        passwordType.type = "password";
-        passIcon.classList = <i class="fa fa-lock"></i>
-        text.innerHTML = "hide"
-        passIcon.src = "images/passwordHide.png"
+        passField.type = "password";
+        showPass.style.color = "black";
     }
 }
+
 
 // ===============================================THIS FUNCTION IS FOR TOAST-BOX==================================================
 
