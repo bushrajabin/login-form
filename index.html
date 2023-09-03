@@ -11,40 +11,59 @@
 
 <body>
 
-
-
-
-
+    <!-- <img  id="imagepreview" src="" alt=""> -->
     <!-- ==============================THIS LINE IS FOR FORM=============== -->
     <div class="main">
         <!-- =====================THIS LINE IS FOR NAV BAR======================== -->
-        <nav class="mainhead" id="mainHead"></nav>
-        <!-- ==============THIS IS A DIV WHEN FORM DISPLAY NONE THAN SHOW THE DIV============= -->
-        <div class="box" id="box1"></div>
+        <div class="contanier" id="contain">
+            <nav class="mainhead" id="mainHead"></nav>
+            <div class="box" id="box1"></div>
+        </div>
+
+
+
+        <!-- This is for a side -->
+        <div class="sideBar" id="hideDiv">
+        </div>
         <div id="toastBox"></div>
         <div class="form" id="form1">
-            <h2>Login-for Add your item</h2>
+            <h2>Registration-form</h2>
 
             <div class="imageDiv">
-                <input type="file"  accept="image/png, image/jpeg" id="image1"/>
+                <label for="file">Upload your profile</label>
+                <img src="./images/user.png" alt="" id="picture">
+                <input type="file" accept="image/*" name="file" id="profile_Input" class="inputfile" onclick="previewImage()" />
+
             </div>
             <div class="commonDiv">
-                <input type="email" placeholder="Email or User Name" id="email" />
+                <input type="text" placeholder="Your Full Name" id="name" />
+
+            </div>
+            <div class="commonDiv">
+                <input type="email" placeholder="Your Email id" id="email" />
                 <i class="fa fa-user fa-1x" style="position: absolute; left: 75%; "></i>
             </div>
-
             <div class="commonDiv">
-                <input type="password" id="password" placeholder="Password" />
+                <input type="password" placeholder="Password" id="password" />
+            </div>
+            <div class="commonDiv">
+                <input type="password" placeholder=" confirm-Password" id="Cp" />
                 <span id="passwordDiv" onclick="showPassword()">
                     <i class="fa fa-lock fa-1x" style="position: absolute; left: 75%; top: 10px;"></i>
                 </span>
-                <!-- <i class=" fa fa-user fa-2x" style="position: absolute; left: 70%;" id="lockOpen;" ;></i> -->
+
+            </div>
+
+
+            <div class="commonDiv">
+                <input type="number" placeholder="Contact" id="Contact" max="10" min="10" />
+
             </div>
             <div class="commonDiv">
-                <input type="confirmPassword" placeholder="confirmPassword" id="Cp" />
-                <i class="fa fa-lock fa-1x" style="position: absolute; left: 75%; top: 10px;"></i>
+                <input type="date" placeholder="DOB" id="Dob" />
+
             </div>
-            <button id="login" onclick="loginForm()">Login</button>
+            <button id="login" onclick="loginForm()">Registration</button>
         </div>
         <!-- 
 
@@ -54,7 +73,8 @@
 
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./script2.js"></script>
+
 </body>
 
 </html>
